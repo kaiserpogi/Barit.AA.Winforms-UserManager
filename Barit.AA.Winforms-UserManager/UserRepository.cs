@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,12 +10,13 @@ namespace Barit.AA.Winforms_UserManager
 {
     public class UserRepository
     {
-        private readonly ISQLiteConnection _connection;
+       
 
         public UserRepository()
         {
-            _connection = new SQLiteConnection("UserDatabase.db");
-            
+            var databasePath = Path.Combine
+                (Environment.GetFolderPath
+                (Environment.SpecialFolder.MyDocuments), "UserData.db");
 
         }
         public bool Add(User user)

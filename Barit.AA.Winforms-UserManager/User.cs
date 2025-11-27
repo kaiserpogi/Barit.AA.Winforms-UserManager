@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace Barit.AA.Winforms_UserManager
 {
@@ -15,6 +16,7 @@ namespace Barit.AA.Winforms_UserManager
             this.Username = username;
             this.Password = password;
         }
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string FullName { get;  set; }
         public string Username { get; set; }
