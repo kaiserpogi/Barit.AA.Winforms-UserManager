@@ -28,20 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgViewUsers = new DataGridView();
             label4 = new Label();
-            btnAdd = new Button();
+            btnNew = new Button();
             btnView = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            btnRefresh = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgViewUsers).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgViewUsers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(1, 49);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(347, 311);
-            dataGridView1.TabIndex = 0;
+            dgViewUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgViewUsers.Location = new Point(1, 49);
+            dgViewUsers.Name = "dgViewUsers";
+            dgViewUsers.Size = new Size(347, 311);
+            dgViewUsers.TabIndex = 0;
             // 
             // label4
             // 
@@ -52,14 +53,15 @@
             label4.TabIndex = 10;
             label4.Text = "List of Users";
             // 
-            // btnAdd
+            // btnNew
             // 
-            btnAdd.Location = new Point(69, 389);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
-            btnAdd.TabIndex = 11;
-            btnAdd.Text = "Add User";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnNew.Location = new Point(69, 389);
+            btnNew.Name = "btnNew";
+            btnNew.Size = new Size(75, 23);
+            btnNew.TabIndex = 11;
+            btnNew.Text = "New User";
+            btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnView
             // 
@@ -70,27 +72,40 @@
             btnView.Text = "View User";
             btnView.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            btnRefresh.Location = new Point(254, 14);
+            btnRefresh.Name = "btnRefresh";
+            btnRefresh.Size = new Size(75, 23);
+            btnRefresh.TabIndex = 13;
+            btnRefresh.Text = "Refresh";
+            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.Click += btnRefresh_Click_1;
+            // 
             // ListUsersForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(352, 438);
+            Controls.Add(btnRefresh);
             Controls.Add(btnView);
-            Controls.Add(btnAdd);
+            Controls.Add(btnNew);
             Controls.Add(label4);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgViewUsers);
             Name = "ListUsersForm";
             Text = "ListUsersForm";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += ListUsersForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgViewUsers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgViewUsers;
         private Label label4;
-        private Button btnAdd;
+        private Button btnNew;
         private Button btnView;
+        private Button btnRefresh;
     }
 }

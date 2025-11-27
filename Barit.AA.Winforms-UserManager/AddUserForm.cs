@@ -19,13 +19,19 @@ namespace Barit.AA.Winforms_UserManager
             }
             else
             {
-                User userToSave = new User(fullName, username,  password);
+                User userToSave = new User();
+                userToSave.Username = username;
+               userToSave.FullName = fullName;
+                 userToSave.Password = password;
+
                 UserRepository repository = new UserRepository();
                 bool isSaved = repository.Add(userToSave);
                 if(isSaved)
                 {
                     MessageBox.Show("User saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    txtboxFname.Clear();
+                    txtUsername.Clear();
+                    txtPassword.Clear();   
                 }
                
                 

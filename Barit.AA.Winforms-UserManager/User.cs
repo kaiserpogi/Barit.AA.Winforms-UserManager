@@ -10,12 +10,7 @@ namespace Barit.AA.Winforms_UserManager
     public class User
     {
        
-        public User(string fullName, string username, string password)
-        {
-            this.FullName = fullName;
-            this.Username = username;
-            this.Password = password;
-        }
+       
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string FullName { get;  set; }
